@@ -1,19 +1,17 @@
-def pay(hrs, rate):
-    if hrs > 40:
-        hour = 40 
-        left = hrs - 40 
-        p = (hour * rate) + (left * (rate * 1.5))
-    elif h <= 40:
-        p = (hrs * rate)
-    return p
-    
 try:
-    hrs = float(raw_input("How many hours do you got: "))
-    rate = float(raw_input("How much rate do you got: "))
+    h_inp = raw_input("Please enter hours: ")
+    hours=float(h_inp)
+    r_inp = raw_input("Please enter rate: ")
+    rate= float(r_inp)
 except:
-    print "Please put in numbers"
-    exit()
+    print "Please enter a whole number!"
+    quit()
 
-p = computerpay(hrs, rate)
+def pay(h,r):
+    if (h>40): 
+        pay = (40*r)+(h-40)*1.5*r
+    else:
+        pay = (h*r)     
+    return pay
 
-print p
+print pay(hours,rate)
